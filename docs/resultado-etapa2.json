@@ -2,163 +2,163 @@
   "cenarios": [
     {
       "http": 201,
-      "resultado": "PASSOU",
-      "cenario": "Preparar usuario"
+      "cenario": "Preparar usuario",
+      "resultado": "PASSOU"
     },
     {
       "http": 201,
-      "resultado": "PASSOU",
-      "cenario": "Cadastrar para BOM"
+      "cenario": "Cadastrar para BOM",
+      "resultado": "PASSOU"
     },
     {
       "http": 201,
-      "resultado": "PASSOU",
-      "cenario": "Criar emprestimo"
+      "cenario": "Criar emprestimo",
+      "resultado": "PASSOU"
     },
     {
       "http": 200,
-      "resultado": "PASSOU",
-      "cenario": "Devolver com BOM"
+      "cenario": "Devolver com BOM",
+      "resultado": "PASSOU"
     },
     {
       "http": 200,
-      "resultado": "PASSOU",
-      "cenario": "Conferir condicao e reserva"
+      "cenario": "Conferir condicao e reserva",
+      "resultado": "PASSOU"
     },
     {
       "http": 200,
-      "resultado": "PASSOU",
-      "cenario": "Repetir devolucao com outra condicao"
+      "cenario": "Repetir devolucao com outra condicao",
+      "resultado": "PASSOU"
     },
     {
       "http": 200,
-      "resultado": "PASSOU",
-      "cenario": "Conferir repeticao sem sobrescrever condicao"
+      "cenario": "Conferir repeticao sem sobrescrever condicao",
+      "resultado": "PASSOU"
     },
     {
       "http": 201,
-      "resultado": "PASSOU",
-      "cenario": "Cadastrar para AVARIADO"
+      "cenario": "Cadastrar para AVARIADO",
+      "resultado": "PASSOU"
     },
     {
       "http": 201,
-      "resultado": "PASSOU",
-      "cenario": "Criar emprestimo"
+      "cenario": "Criar emprestimo",
+      "resultado": "PASSOU"
     },
     {
       "http": 200,
-      "resultado": "PASSOU",
-      "cenario": "Devolver com AVARIADO"
+      "cenario": "Devolver com AVARIADO",
+      "resultado": "PASSOU"
     },
     {
       "http": 200,
-      "resultado": "PASSOU",
-      "cenario": "Conferir condicao e reserva"
+      "cenario": "Conferir condicao e reserva",
+      "resultado": "PASSOU"
     },
     {
       "http": 200,
-      "resultado": "PASSOU",
-      "cenario": "Repetir devolucao com outra condicao"
+      "cenario": "Repetir devolucao com outra condicao",
+      "resultado": "PASSOU"
     },
     {
       "http": 200,
-      "resultado": "PASSOU",
-      "cenario": "Conferir repeticao sem sobrescrever condicao"
+      "cenario": "Conferir repeticao sem sobrescrever condicao",
+      "resultado": "PASSOU"
     },
     {
       "http": 404,
-      "resultado": "PASSOU",
-      "cenario": "CT03 equipamento inexistente"
+      "cenario": "CT03 equipamento inexistente",
+      "resultado": "PASSOU"
     },
     {
       "http": 400,
-      "resultado": "PASSOU",
-      "cenario": "Condicao invalida"
+      "cenario": "Condicao invalida",
+      "resultado": "PASSOU"
     },
     {
       "http": 400,
-      "resultado": "PASSOU",
-      "cenario": "Condicao obrigatoria na devolucao"
+      "cenario": "Condicao obrigatoria na devolucao",
+      "resultado": "PASSOU"
     },
     {
       "http": 201,
-      "resultado": "PASSOU",
-      "cenario": "Equipamento para indisponibilidade"
+      "cenario": "Equipamento para indisponibilidade",
+      "resultado": "PASSOU"
     },
     {
       "http": 201,
-      "resultado": "PASSOU",
-      "cenario": "Emprestimo para indisponibilidade"
+      "cenario": "Emprestimo para indisponibilidade",
+      "resultado": "PASSOU"
     },
     {
       "http": 201,
-      "resultado": "PASSOU",
-      "cenario": "Equipamento para indisponibilidade"
+      "cenario": "Equipamento para indisponibilidade",
+      "resultado": "PASSOU"
     },
     {
       "http": 201,
-      "resultado": "PASSOU",
-      "cenario": "Emprestimo para indisponibilidade"
+      "cenario": "Emprestimo para indisponibilidade",
+      "resultado": "PASSOU"
     },
     {
       "http": 201,
-      "resultado": "PASSOU",
-      "cenario": "Equipamento para indisponibilidade"
+      "cenario": "Equipamento para indisponibilidade",
+      "resultado": "PASSOU"
     },
     {
       "http": 201,
-      "resultado": "PASSOU",
-      "cenario": "Emprestimo para indisponibilidade"
+      "cenario": "Emprestimo para indisponibilidade",
+      "resultado": "PASSOU"
     },
     {
       "http": 503,
-      "resultado": "PASSOU",
-      "cenario": "CT04 falha remota"
+      "cenario": "CT04 falha remota",
+      "resultado": "PASSOU"
     },
     {
       "http": 200,
-      "resultado": "PASSOU",
-      "cenario": "Emprestimo continua ativo"
+      "cenario": "Emprestimo continua ativo",
+      "resultado": "PASSOU"
     },
     {
       "http": 503,
-      "resultado": "PASSOU",
-      "cenario": "CT04 falha remota"
+      "cenario": "CT04 falha remota",
+      "resultado": "PASSOU"
     },
     {
       "http": 200,
-      "resultado": "PASSOU",
-      "cenario": "Emprestimo continua ativo"
+      "cenario": "Emprestimo continua ativo",
+      "resultado": "PASSOU"
     },
     {
       "http": 503,
-      "resultado": "PASSOU",
-      "cenario": "CT04 falha remota"
+      "cenario": "CT04 falha remota",
+      "resultado": "PASSOU"
     },
     {
       "http": 200,
-      "resultado": "PASSOU",
-      "cenario": "Emprestimo continua ativo"
+      "cenario": "Emprestimo continua ativo",
+      "resultado": "PASSOU"
     },
     {
       "http": 503,
-      "resultado": "PASSOU",
-      "cenario": "CT05 chamada bloqueada"
+      "cenario": "CT05 chamada bloqueada",
+      "resultado": "PASSOU"
     },
     {
       "http": 200,
-      "resultado": "PASSOU",
-      "cenario": "CT06 primeira chamada de recuperacao"
+      "cenario": "CT06 primeira chamada de recuperacao",
+      "resultado": "PASSOU"
     },
     {
       "http": 200,
-      "resultado": "PASSOU",
-      "cenario": "CT06 segunda chamada de recuperacao"
+      "cenario": "CT06 segunda chamada de recuperacao",
+      "resultado": "PASSOU"
     },
     {
       "http": 200,
-      "resultado": "PASSOU",
-      "cenario": "Concluir ultimo emprestimo de teste"
+      "cenario": "Concluir ultimo emprestimo de teste",
+      "resultado": "PASSOU"
     }
   ],
   "estadoFinal": {
@@ -173,5 +173,5 @@
     "notPermittedCalls": 0,
     "state": "CLOSED"
   },
-  "executadoEm": "2026-11-16T17:42:14.3925703-03:00"
+  "executadoEm": "2026-11-16T17:56:22.4043770-03:00"
 }

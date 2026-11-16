@@ -1,0 +1,22 @@
+[INFO] ------------------------------------------------------------------------
+[INFO] Reactor Summary for emprestimos 1.0.0:
+[INFO] 
+[INFO] emprestimos ........................................ SUCCESS [  0.003 s]
+[INFO] discovery-server ................................... SUCCESS [  2.204 s]
+[INFO] api-gateway ........................................ SUCCESS [  0.351 s]
+[INFO] msusuario .......................................... SUCCESS [  0.831 s]
+[INFO] msequipamento ...................................... SUCCESS [  0.608 s]
+[INFO] msemprestimo ....................................... SUCCESS [  8.594 s]
+[INFO] ------------------------------------------------------------------------
+[INFO] BUILD SUCCESS
+[INFO] ------------------------------------------------------------------------
+[INFO] Total time:  12.997 s
+[INFO] Finished at: 2026-11-16T17:54:41-03:00
+[INFO] ------------------------------------------------------------------------
+discovery-server pronto na porta 8761
+msusuario pronto na porta 8081
+msequipamento pronto na porta 8082
+msemprestimo pronto na porta 8083
+api-gateway pronto na porta 8080
+Aguardando propagacao do registro Eureka...
+Sistema pronto: http://localhost:8080 | Eureka: http://localhost:8761
