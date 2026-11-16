@@ -1,0 +1,108 @@
+{
+  "circuitBreakerEvents": [
+    {
+      "circuitBreakerName": "alterarCondicao",
+      "type": "SUCCESS",
+      "creationTime": "2026-11-16T17:41:34.342683100-03:00[America/Sao_Paulo]",
+      "errorMessage": null,
+      "durationInMs": 16,
+      "stateTransition": null
+    },
+    {
+      "circuitBreakerName": "alterarCondicao",
+      "type": "SUCCESS",
+      "creationTime": "2026-11-16T17:41:34.468565600-03:00[America/Sao_Paulo]",
+      "errorMessage": null,
+      "durationInMs": 9,
+      "stateTransition": null
+    },
+    {
+      "circuitBreakerName": "alterarCondicao",
+      "type": "ERROR",
+      "creationTime": "2026-11-16T17:41:34.788053100-03:00[America/Sao_Paulo]",
+      "errorMessage": "feign.RetryableException: Connection refused: getsockopt executing PUT http://msequipamento/api/v1/equipamentos/6137cfce-28be-4c80-b294-767f1dd0e5fe/condicao",
+      "durationInMs": 7,
+      "stateTransition": null
+    },
+    {
+      "circuitBreakerName": "alterarCondicao",
+      "type": "ERROR",
+      "creationTime": "2026-11-16T17:41:34.828578900-03:00[America/Sao_Paulo]",
+      "errorMessage": "feign.RetryableException: Connection refused: getsockopt executing PUT http://msequipamento/api/v1/equipamentos/5c9a5da4-2f54-4150-8503-a24b76ae49a2/condicao",
+      "durationInMs": 2,
+      "stateTransition": null
+    },
+    {
+      "circuitBreakerName": "alterarCondicao",
+      "type": "FAILURE_RATE_EXCEEDED",
+      "creationTime": "2026-11-16T17:41:34.829090500-03:00[America/Sao_Paulo]",
+      "errorMessage": null,
+      "durationInMs": null,
+      "stateTransition": null
+    },
+    {
+      "circuitBreakerName": "alterarCondicao",
+      "type": "STATE_TRANSITION",
+      "creationTime": "2026-11-16T17:41:34.831144600-03:00[America/Sao_Paulo]",
+      "errorMessage": null,
+      "durationInMs": null,
+      "stateTransition": "CLOSED_TO_OPEN"
+    },
+    {
+      "circuitBreakerName": "alterarCondicao",
+      "type": "NOT_PERMITTED",
+      "creationTime": "2026-11-16T17:41:34.853790100-03:00[America/Sao_Paulo]",
+      "errorMessage": null,
+      "durationInMs": null,
+      "stateTransition": null
+    },
+    {
+      "circuitBreakerName": "alterarCondicao",
+      "type": "NOT_PERMITTED",
+      "creationTime": "2026-11-16T17:41:34.885788800-03:00[America/Sao_Paulo]",
+      "errorMessage": null,
+      "durationInMs": null,
+      "stateTransition": null
+    },
+    {
+      "circuitBreakerName": "alterarCondicao",
+      "type": "STATE_TRANSITION",
+      "creationTime": "2026-11-16T17:42:14.114741300-03:00[America/Sao_Paulo]",
+      "errorMessage": null,
+      "durationInMs": null,
+      "stateTransition": "OPEN_TO_HALF_OPEN"
+    },
+    {
+      "circuitBreakerName": "alterarCondicao",
+      "type": "SUCCESS",
+      "creationTime": "2026-11-16T17:42:14.285980200-03:00[America/Sao_Paulo]",
+      "errorMessage": null,
+      "durationInMs": 171,
+      "stateTransition": null
+    },
+    {
+      "circuitBreakerName": "alterarCondicao",
+      "type": "SUCCESS",
+      "creationTime": "2026-11-16T17:42:14.336195500-03:00[America/Sao_Paulo]",
+      "errorMessage": null,
+      "durationInMs": 9,
+      "stateTransition": null
+    },
+    {
+      "circuitBreakerName": "alterarCondicao",
+      "type": "STATE_TRANSITION",
+      "creationTime": "2026-11-16T17:42:14.336706900-03:00[America/Sao_Paulo]",
+      "errorMessage": null,
+      "durationInMs": null,
+      "stateTransition": "HALF_OPEN_TO_CLOSED"
+    },
+    {
+      "circuitBreakerName": "alterarCondicao",
+      "type": "SUCCESS",
+      "creationTime": "2026-11-16T17:42:14.364980200-03:00[America/Sao_Paulo]",
+      "errorMessage": null,
+      "durationInMs": 6,
+      "stateTransition": null
+    }
+  ]
+}

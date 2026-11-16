@@ -1,0 +1,526 @@
+{
+  "info": {
+    "name": "Etapa 2 - Condição e resiliência",
+    "schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+    "description": "Execute o fluxo normal. Depois pare msequipamento com o PID do projeto. Repita a chamada 503 até OPEN (janela inclui sucessos anteriores). Confira o empréstimo ATIVO. Restaure com scripts/start.ps1 -SkipBuild, aguarde 31s e devolva. Para fechar HALF_OPEN são necessárias duas chamadas remotas bem-sucedidas de empréstimos diferentes. Use scripts/test-etapa2.ps1 para a demonstração completa automatizada."
+  },
+  "variable": [
+    {
+      "key": "baseUrl",
+      "value": "http://localhost:8080"
+    },
+    {
+      "key": "servicoEmprestimo",
+      "value": "http://localhost:8083"
+    }
+  ],
+  "item": [
+    {
+      "name": "1 Fluxo normal e preparação",
+      "item": [
+        {
+          "name": "01 Cadastrar Daniel",
+          "request": {
+            "method": "POST",
+            "header": [
+              {
+                "key": "Content-Type",
+                "value": "application/json"
+              }
+            ],
+            "url": "{{baseUrl}}/api/v1/usuarios",
+            "body": {
+              "mode": "raw",
+              "raw": "{\"nome\": \"Daniel\", \"email\": \"daniel-{{sufixo}}@exemplo.com\", \"matricula\": \"{{sufixo}}\"}",
+              "options": {
+                "raw": {
+                  "language": "json"
+                }
+              }
+            }
+          },
+          "event": [
+            {
+              "listen": "test",
+              "script": {
+                "type": "text/javascript",
+                "exec": [
+                  "pm.test(\"HTTP 201\", () => pm.response.to.have.status(201));",
+                  "pm.collectionVariables.set(\"usuarioId\",pm.response.json().id);"
+                ]
+              }
+            },
+            {
+              "listen": "prerequest",
+              "script": {
+                "type": "text/javascript",
+                "exec": [
+                  "pm.collectionVariables.set(\"sufixo\",pm.variables.replaceIn(\"{{$guid}}\"));"
+                ]
+              }
+            }
+          ]
+        },
+        {
+          "name": "Cadastrar equipamento BOM",
+          "request": {
+            "method": "POST",
+            "header": [
+              {
+                "key": "Content-Type",
+                "value": "application/json"
+              }
+            ],
+            "url": "{{baseUrl}}/api/v1/equipamentos",
+            "body": {
+              "mode": "raw",
+              "raw": "{\"nome\": \"Notebook da sala\", \"tipo\": \"NOTEBOOK\", \"patrimonio\": \"{{sufixo}}-BOM\"}",
+              "options": {
+                "raw": {
+                  "language": "json"
+                }
+              }
+            }
+          },
+          "event": [
+            {
+              "listen": "test",
+              "script": {
+                "type": "text/javascript",
+                "exec": [
+                  "pm.test(\"HTTP 201\", () => pm.response.to.have.status(201));",
+                  "pm.collectionVariables.set(\"equipamentoId\",pm.response.json().id);"
+                ]
+              }
+            }
+          ]
+        },
+        {
+          "name": "Criar empréstimo BOM",
+          "request": {
+            "method": "POST",
+            "header": [
+              {
+                "key": "Content-Type",
+                "value": "application/json"
+              }
+            ],
+            "url": "{{baseUrl}}/api/v1/emprestimos",
+            "body": {
+              "mode": "raw",
+              "raw": "{\"usuarioId\": \"{{usuarioId}}\", \"equipamentoId\": \"{{equipamentoId}}\"}",
+              "options": {
+                "raw": {
+                  "language": "json"
+                }
+              }
+            }
+          },
+          "event": [
+            {
+              "listen": "test",
+              "script": {
+                "type": "text/javascript",
+                "exec": [
+                  "pm.test(\"HTTP 201\", () => pm.response.to.have.status(201));",
+                  "pm.collectionVariables.set(\"emprestimoId\",pm.response.json().id);"
+                ]
+              }
+            }
+          ]
+        },
+        {
+          "name": "Devolver BOM",
+          "request": {
+            "method": "PUT",
+            "header": [
+              {
+                "key": "Content-Type",
+                "value": "application/json"
+              }
+            ],
+            "url": "{{baseUrl}}/api/v1/emprestimos/{{emprestimoId}}/devolucao",
+            "body": {
+              "mode": "raw",
+              "raw": "{\"condicao\": \"BOM\"}",
+              "options": {
+                "raw": {
+                  "language": "json"
+                }
+              }
+            }
+          },
+          "event": [
+            {
+              "listen": "test",
+              "script": {
+                "type": "text/javascript",
+                "exec": [
+                  "pm.test(\"HTTP 200\", () => pm.response.to.have.status(200));",
+                  "pm.test(\"Devolvido\",()=>pm.expect(pm.response.json().status).to.eql(\"DEVOLVIDO\"));"
+                ]
+              }
+            }
+          ]
+        },
+        {
+          "name": "Conferir condição e liberação",
+          "request": {
+            "method": "GET",
+            "header": [
+              {
+                "key": "Content-Type",
+                "value": "application/json"
+              }
+            ],
+            "url": "{{baseUrl}}/api/v1/equipamentos/{{equipamentoId}}"
+          },
+          "event": [
+            {
+              "listen": "test",
+              "script": {
+                "type": "text/javascript",
+                "exec": [
+                  "pm.test(\"HTTP 200\", () => pm.response.to.have.status(200));",
+                  "pm.test(\"Condição\",()=>pm.expect(pm.response.json().condicao).to.eql(\"BOM\"));",
+                  "pm.test(\"Livre\",()=>pm.expect(pm.response.json().disponivel).to.eql(true));"
+                ]
+              }
+            }
+          ]
+        },
+        {
+          "name": "Cadastrar equipamento AVARIADO",
+          "request": {
+            "method": "POST",
+            "header": [
+              {
+                "key": "Content-Type",
+                "value": "application/json"
+              }
+            ],
+            "url": "{{baseUrl}}/api/v1/equipamentos",
+            "body": {
+              "mode": "raw",
+              "raw": "{\"nome\": \"Notebook da sala\", \"tipo\": \"NOTEBOOK\", \"patrimonio\": \"{{sufixo}}-AVARIADO\"}",
+              "options": {
+                "raw": {
+                  "language": "json"
+                }
+              }
+            }
+          },
+          "event": [
+            {
+              "listen": "test",
+              "script": {
+                "type": "text/javascript",
+                "exec": [
+                  "pm.test(\"HTTP 201\", () => pm.response.to.have.status(201));",
+                  "pm.collectionVariables.set(\"equipamentoId\",pm.response.json().id);"
+                ]
+              }
+            }
+          ]
+        },
+        {
+          "name": "Criar empréstimo AVARIADO",
+          "request": {
+            "method": "POST",
+            "header": [
+              {
+                "key": "Content-Type",
+                "value": "application/json"
+              }
+            ],
+            "url": "{{baseUrl}}/api/v1/emprestimos",
+            "body": {
+              "mode": "raw",
+              "raw": "{\"usuarioId\": \"{{usuarioId}}\", \"equipamentoId\": \"{{equipamentoId}}\"}",
+              "options": {
+                "raw": {
+                  "language": "json"
+                }
+              }
+            }
+          },
+          "event": [
+            {
+              "listen": "test",
+              "script": {
+                "type": "text/javascript",
+                "exec": [
+                  "pm.test(\"HTTP 201\", () => pm.response.to.have.status(201));",
+                  "pm.collectionVariables.set(\"emprestimoId\",pm.response.json().id);"
+                ]
+              }
+            }
+          ]
+        },
+        {
+          "name": "Devolver AVARIADO",
+          "request": {
+            "method": "PUT",
+            "header": [
+              {
+                "key": "Content-Type",
+                "value": "application/json"
+              }
+            ],
+            "url": "{{baseUrl}}/api/v1/emprestimos/{{emprestimoId}}/devolucao",
+            "body": {
+              "mode": "raw",
+              "raw": "{\"condicao\": \"AVARIADO\"}",
+              "options": {
+                "raw": {
+                  "language": "json"
+                }
+              }
+            }
+          },
+          "event": [
+            {
+              "listen": "test",
+              "script": {
+                "type": "text/javascript",
+                "exec": [
+                  "pm.test(\"HTTP 200\", () => pm.response.to.have.status(200));",
+                  "pm.test(\"Devolvido\",()=>pm.expect(pm.response.json().status).to.eql(\"DEVOLVIDO\"));"
+                ]
+              }
+            }
+          ]
+        },
+        {
+          "name": "Conferir condição e liberação",
+          "request": {
+            "method": "GET",
+            "header": [
+              {
+                "key": "Content-Type",
+                "value": "application/json"
+              }
+            ],
+            "url": "{{baseUrl}}/api/v1/equipamentos/{{equipamentoId}}"
+          },
+          "event": [
+            {
+              "listen": "test",
+              "script": {
+                "type": "text/javascript",
+                "exec": [
+                  "pm.test(\"HTTP 200\", () => pm.response.to.have.status(200));",
+                  "pm.test(\"Condição\",()=>pm.expect(pm.response.json().condicao).to.eql(\"AVARIADO\"));",
+                  "pm.test(\"Livre\",()=>pm.expect(pm.response.json().disponivel).to.eql(true));"
+                ]
+              }
+            }
+          ]
+        },
+        {
+          "name": "Equipamento inexistente",
+          "request": {
+            "method": "PUT",
+            "header": [
+              {
+                "key": "Content-Type",
+                "value": "application/json"
+              }
+            ],
+            "url": "{{baseUrl}}/api/v1/equipamentos/00000000-0000-0000-0000-000000000000/condicao",
+            "body": {
+              "mode": "raw",
+              "raw": "{\"condicao\": \"BOM\"}",
+              "options": {
+                "raw": {
+                  "language": "json"
+                }
+              }
+            }
+          },
+          "event": [
+            {
+              "listen": "test",
+              "script": {
+                "type": "text/javascript",
+                "exec": [
+                  "pm.test(\"HTTP 404\", () => pm.response.to.have.status(404));"
+                ]
+              }
+            }
+          ]
+        },
+        {
+          "name": "Preparar equipamento para falha",
+          "request": {
+            "method": "POST",
+            "header": [
+              {
+                "key": "Content-Type",
+                "value": "application/json"
+              }
+            ],
+            "url": "{{baseUrl}}/api/v1/equipamentos",
+            "body": {
+              "mode": "raw",
+              "raw": "{\"nome\": \"Projetor\", \"tipo\": \"PROJETOR\", \"patrimonio\": \"{{sufixo}}-falha\"}",
+              "options": {
+                "raw": {
+                  "language": "json"
+                }
+              }
+            }
+          },
+          "event": [
+            {
+              "listen": "test",
+              "script": {
+                "type": "text/javascript",
+                "exec": [
+                  "pm.test(\"HTTP 201\", () => pm.response.to.have.status(201));",
+                  "pm.collectionVariables.set(\"equipamentoId\",pm.response.json().id);"
+                ]
+              }
+            }
+          ]
+        },
+        {
+          "name": "Preparar empréstimo para falha",
+          "request": {
+            "method": "POST",
+            "header": [
+              {
+                "key": "Content-Type",
+                "value": "application/json"
+              }
+            ],
+            "url": "{{baseUrl}}/api/v1/emprestimos",
+            "body": {
+              "mode": "raw",
+              "raw": "{\"usuarioId\": \"{{usuarioId}}\", \"equipamentoId\": \"{{equipamentoId}}\"}",
+              "options": {
+                "raw": {
+                  "language": "json"
+                }
+              }
+            }
+          },
+          "event": [
+            {
+              "listen": "test",
+              "script": {
+                "type": "text/javascript",
+                "exec": [
+                  "pm.test(\"HTTP 201\", () => pm.response.to.have.status(201));",
+                  "pm.collectionVariables.set(\"emprestimoId\",pm.response.json().id);"
+                ]
+              }
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "name": "2 Indisponibilidade - execução manual",
+      "item": [
+        {
+          "name": "Com msequipamento parado: repetir até OPEN",
+          "request": {
+            "method": "PUT",
+            "header": [
+              {
+                "key": "Content-Type",
+                "value": "application/json"
+              }
+            ],
+            "url": "{{baseUrl}}/api/v1/emprestimos/{{emprestimoId}}/devolucao",
+            "body": {
+              "mode": "raw",
+              "raw": "{\"condicao\": \"AVARIADO\"}",
+              "options": {
+                "raw": {
+                  "language": "json"
+                }
+              }
+            }
+          },
+          "event": [
+            {
+              "listen": "test",
+              "script": {
+                "type": "text/javascript",
+                "exec": [
+                  "pm.test(\"HTTP 503\", () => pm.response.to.have.status(503));"
+                ]
+              }
+            }
+          ]
+        },
+        {
+          "name": "Conferir empréstimo ATIVO",
+          "request": {
+            "method": "GET",
+            "header": [
+              {
+                "key": "Content-Type",
+                "value": "application/json"
+              }
+            ],
+            "url": "{{baseUrl}}/api/v1/emprestimos/{{emprestimoId}}"
+          },
+          "event": [
+            {
+              "listen": "test",
+              "script": {
+                "type": "text/javascript",
+                "exec": [
+                  "pm.test(\"HTTP 200\", () => pm.response.to.have.status(200));",
+                  "pm.test(\"Não concluído\",()=>pm.expect(pm.response.json().status).to.eql(\"ATIVO\"));",
+                  "pm.test(\"Sem data\",()=>pm.expect(pm.response.json().dataDevolucao).to.eql(null));"
+                ]
+              }
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "name": "3 Após restaurar e aguardar 31s",
+      "item": [
+        {
+          "name": "Devolver após recuperação",
+          "request": {
+            "method": "PUT",
+            "header": [
+              {
+                "key": "Content-Type",
+                "value": "application/json"
+              }
+            ],
+            "url": "{{baseUrl}}/api/v1/emprestimos/{{emprestimoId}}/devolucao",
+            "body": {
+              "mode": "raw",
+              "raw": "{\"condicao\": \"AVARIADO\"}",
+              "options": {
+                "raw": {
+                  "language": "json"
+                }
+              }
+            }
+          },
+          "event": [
+            {
+              "listen": "test",
+              "script": {
+                "type": "text/javascript",
+                "exec": [
+                  "pm.test(\"HTTP 200\", () => pm.response.to.have.status(200));"
+                ]
+              }
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}

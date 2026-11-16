@@ -1,0 +1,1 @@
+CREATE TABLE tb_emprestimos (id BINARY(16) PRIMARY KEY,usuario_id BINARY(16) NOT NULL,equipamento_id BINARY(16) NOT NULL,data_emprestimo DATETIME(6) NOT NULL,data_devolucao DATETIME(6),status VARCHAR(20) NOT NULL, INDEX idx_usuario(usuario_id));

@@ -1,0 +1,181 @@
+{
+  "executadoEm": "2026-11-16T20:43:35.002Z",
+  "observacao": "Requisições e scripts Postman executados por validador local. Pasta manual de falhas não incluída; falhas reais verificadas por test-etapa2.ps1.",
+  "total": 29,
+  "cenarios": [
+    {
+      "colecao": "postman_collection.json",
+      "cenario": "01 Criar usuario",
+      "http": 201,
+      "resultado": "PASSOU"
+    },
+    {
+      "colecao": "postman_collection.json",
+      "cenario": "02 Consultar usuario",
+      "http": 200,
+      "resultado": "PASSOU"
+    },
+    {
+      "colecao": "postman_collection.json",
+      "cenario": "03 Criar equipamento",
+      "http": 201,
+      "resultado": "PASSOU"
+    },
+    {
+      "colecao": "postman_collection.json",
+      "cenario": "04 Consultar equipamento",
+      "http": 200,
+      "resultado": "PASSOU"
+    },
+    {
+      "colecao": "postman_collection.json",
+      "cenario": "05 Listar disponiveis",
+      "http": 200,
+      "resultado": "PASSOU"
+    },
+    {
+      "colecao": "postman_collection.json",
+      "cenario": "06 Email duplicado",
+      "http": 409,
+      "resultado": "PASSOU"
+    },
+    {
+      "colecao": "postman_collection.json",
+      "cenario": "07 Entrada invalida",
+      "http": 400,
+      "resultado": "PASSOU"
+    },
+    {
+      "colecao": "postman_collection.json",
+      "cenario": "08 Usuario inexistente",
+      "http": 404,
+      "resultado": "PASSOU"
+    },
+    {
+      "colecao": "postman_collection.json",
+      "cenario": "09 Criar emprestimo",
+      "http": 201,
+      "resultado": "PASSOU"
+    },
+    {
+      "colecao": "postman_collection.json",
+      "cenario": "10 Consultar emprestimo",
+      "http": 200,
+      "resultado": "PASSOU"
+    },
+    {
+      "colecao": "postman_collection.json",
+      "cenario": "11 Consultar por usuario",
+      "http": 200,
+      "resultado": "PASSOU"
+    },
+    {
+      "colecao": "postman_collection.json",
+      "cenario": "12 Equipamento ocupado",
+      "http": 409,
+      "resultado": "PASSOU"
+    },
+    {
+      "colecao": "postman_collection.json",
+      "cenario": "13 Repetir reserva",
+      "http": 200,
+      "resultado": "PASSOU"
+    },
+    {
+      "colecao": "postman_collection.json",
+      "cenario": "14 Reserva de outro dono",
+      "http": 409,
+      "resultado": "PASSOU"
+    },
+    {
+      "colecao": "postman_collection.json",
+      "cenario": "15 Devolver",
+      "http": 200,
+      "resultado": "PASSOU"
+    },
+    {
+      "colecao": "postman_collection.json",
+      "cenario": "16 Repetir devolucao",
+      "http": 200,
+      "resultado": "PASSOU"
+    },
+    {
+      "colecao": "postman_collection.json",
+      "cenario": "17 Repetir liberacao",
+      "http": 204,
+      "resultado": "PASSOU"
+    },
+    {
+      "colecao": "postman_etapa2.json",
+      "cenario": "01 Cadastrar Daniel",
+      "http": 201,
+      "resultado": "PASSOU"
+    },
+    {
+      "colecao": "postman_etapa2.json",
+      "cenario": "Cadastrar equipamento BOM",
+      "http": 201,
+      "resultado": "PASSOU"
+    },
+    {
+      "colecao": "postman_etapa2.json",
+      "cenario": "Criar empréstimo BOM",
+      "http": 201,
+      "resultado": "PASSOU"
+    },
+    {
+      "colecao": "postman_etapa2.json",
+      "cenario": "Devolver BOM",
+      "http": 200,
+      "resultado": "PASSOU"
+    },
+    {
+      "colecao": "postman_etapa2.json",
+      "cenario": "Conferir condição e liberação",
+      "http": 200,
+      "resultado": "PASSOU"
+    },
+    {
+      "colecao": "postman_etapa2.json",
+      "cenario": "Cadastrar equipamento AVARIADO",
+      "http": 201,
+      "resultado": "PASSOU"
+    },
+    {
+      "colecao": "postman_etapa2.json",
+      "cenario": "Criar empréstimo AVARIADO",
+      "http": 201,
+      "resultado": "PASSOU"
+    },
+    {
+      "colecao": "postman_etapa2.json",
+      "cenario": "Devolver AVARIADO",
+      "http": 200,
+      "resultado": "PASSOU"
+    },
+    {
+      "colecao": "postman_etapa2.json",
+      "cenario": "Conferir condição e liberação",
+      "http": 200,
+      "resultado": "PASSOU"
+    },
+    {
+      "colecao": "postman_etapa2.json",
+      "cenario": "Equipamento inexistente",
+      "http": 404,
+      "resultado": "PASSOU"
+    },
+    {
+      "colecao": "postman_etapa2.json",
+      "cenario": "Preparar equipamento para falha",
+      "http": 201,
+      "resultado": "PASSOU"
+    },
+    {
+      "colecao": "postman_etapa2.json",
+      "cenario": "Preparar empréstimo para falha",
+      "http": 201,
+      "resultado": "PASSOU"
+    }
+  ]
+}

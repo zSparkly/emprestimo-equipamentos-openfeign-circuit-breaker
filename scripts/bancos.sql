@@ -1,0 +1,12 @@
+CREATE DATABASE IF NOT EXISTS msusuario CHARACTER SET utf8mb4;
+CREATE DATABASE IF NOT EXISTS msequipamento CHARACTER SET utf8mb4;
+CREATE DATABASE IF NOT EXISTS msemprestimo CHARACTER SET utf8mb4;
+CREATE USER IF NOT EXISTS 'msusuario'@'localhost' IDENTIFIED BY '{{SENHA_MSUSUARIO}}';
+CREATE USER IF NOT EXISTS 'msequipamento'@'localhost' IDENTIFIED BY '{{SENHA_MSEQUIPAMENTO}}';
+CREATE USER IF NOT EXISTS 'msemprestimo'@'localhost' IDENTIFIED BY '{{SENHA_MSEMPRESTIMO}}';
+GRANT ALL ON msusuario.* TO 'msusuario'@'localhost';
+GRANT ALL ON msequipamento.* TO 'msequipamento'@'localhost';
+GRANT ALL ON msemprestimo.* TO 'msemprestimo'@'localhost';
+ALTER USER 'msusuario'@'localhost' IDENTIFIED BY '{{SENHA_MSUSUARIO}}';
+ALTER USER 'msequipamento'@'localhost' IDENTIFIED BY '{{SENHA_MSEQUIPAMENTO}}';
+ALTER USER 'msemprestimo'@'localhost' IDENTIFIED BY '{{SENHA_MSEMPRESTIMO}}';

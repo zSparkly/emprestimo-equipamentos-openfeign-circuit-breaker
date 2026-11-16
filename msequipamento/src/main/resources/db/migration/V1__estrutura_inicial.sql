@@ -1,0 +1,1 @@
+CREATE TABLE tb_equipamentos (id BINARY(16) PRIMARY KEY,nome VARCHAR(150) NOT NULL,tipo VARCHAR(60) NOT NULL,patrimonio VARCHAR(100) NOT NULL UNIQUE,disponivel BIT NOT NULL,reserva_id BINARY(16),CONSTRAINT chk_reserva CHECK ((disponivel=1 AND reserva_id IS NULL) OR (disponivel=0 AND reserva_id IS NOT NULL)));

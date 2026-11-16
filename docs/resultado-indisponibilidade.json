@@ -1,0 +1,11 @@
+{
+  "resposta": {
+    "mensagem": "Não foi possível acessar um dos serviços. Tente novamente em instantes.",
+    "status": 503,
+    "timestamp": "2026-11-14T20:21:35.438361600Z"
+  },
+  "cenario": "msusuario fora do ar",
+  "resultado": "PASSOU",
+  "http": 503,
+  "executadoEm": "2026-11-14T17:21:35.4527768-03:00"
+}
