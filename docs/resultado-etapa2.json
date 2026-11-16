@@ -1,177 +1,177 @@
-{
-  "cenarios": [
-    {
-      "http": 201,
-      "cenario": "Preparar usuario",
-      "resultado": "PASSOU"
-    },
-    {
-      "http": 201,
-      "cenario": "Cadastrar para BOM",
-      "resultado": "PASSOU"
-    },
-    {
-      "http": 201,
-      "cenario": "Criar emprestimo",
-      "resultado": "PASSOU"
-    },
-    {
-      "http": 200,
-      "cenario": "Devolver com BOM",
-      "resultado": "PASSOU"
-    },
-    {
-      "http": 200,
-      "cenario": "Conferir condicao e reserva",
-      "resultado": "PASSOU"
-    },
-    {
-      "http": 200,
-      "cenario": "Repetir devolucao com outra condicao",
-      "resultado": "PASSOU"
-    },
-    {
-      "http": 200,
-      "cenario": "Conferir repeticao sem sobrescrever condicao",
-      "resultado": "PASSOU"
-    },
-    {
-      "http": 201,
-      "cenario": "Cadastrar para AVARIADO",
-      "resultado": "PASSOU"
-    },
-    {
-      "http": 201,
-      "cenario": "Criar emprestimo",
-      "resultado": "PASSOU"
-    },
-    {
-      "http": 200,
-      "cenario": "Devolver com AVARIADO",
-      "resultado": "PASSOU"
-    },
-    {
-      "http": 200,
-      "cenario": "Conferir condicao e reserva",
-      "resultado": "PASSOU"
-    },
-    {
-      "http": 200,
-      "cenario": "Repetir devolucao com outra condicao",
-      "resultado": "PASSOU"
-    },
-    {
-      "http": 200,
-      "cenario": "Conferir repeticao sem sobrescrever condicao",
-      "resultado": "PASSOU"
-    },
-    {
-      "http": 404,
-      "cenario": "CT03 equipamento inexistente",
-      "resultado": "PASSOU"
-    },
-    {
-      "http": 400,
-      "cenario": "Condicao invalida",
-      "resultado": "PASSOU"
-    },
-    {
-      "http": 400,
-      "cenario": "Condicao obrigatoria na devolucao",
-      "resultado": "PASSOU"
-    },
-    {
-      "http": 201,
-      "cenario": "Equipamento para indisponibilidade",
-      "resultado": "PASSOU"
-    },
-    {
-      "http": 201,
-      "cenario": "Emprestimo para indisponibilidade",
-      "resultado": "PASSOU"
-    },
-    {
-      "http": 201,
-      "cenario": "Equipamento para indisponibilidade",
-      "resultado": "PASSOU"
-    },
-    {
-      "http": 201,
-      "cenario": "Emprestimo para indisponibilidade",
-      "resultado": "PASSOU"
-    },
-    {
-      "http": 201,
-      "cenario": "Equipamento para indisponibilidade",
-      "resultado": "PASSOU"
-    },
-    {
-      "http": 201,
-      "cenario": "Emprestimo para indisponibilidade",
-      "resultado": "PASSOU"
-    },
-    {
-      "http": 503,
-      "cenario": "CT04 falha remota",
-      "resultado": "PASSOU"
-    },
-    {
-      "http": 200,
-      "cenario": "Emprestimo continua ativo",
-      "resultado": "PASSOU"
-    },
-    {
-      "http": 503,
-      "cenario": "CT04 falha remota",
-      "resultado": "PASSOU"
-    },
-    {
-      "http": 200,
-      "cenario": "Emprestimo continua ativo",
-      "resultado": "PASSOU"
-    },
-    {
-      "http": 503,
-      "cenario": "CT04 falha remota",
-      "resultado": "PASSOU"
-    },
-    {
-      "http": 200,
-      "cenario": "Emprestimo continua ativo",
-      "resultado": "PASSOU"
-    },
-    {
-      "http": 503,
-      "cenario": "CT05 chamada bloqueada",
-      "resultado": "PASSOU"
-    },
-    {
-      "http": 200,
-      "cenario": "CT06 primeira chamada de recuperacao",
-      "resultado": "PASSOU"
-    },
-    {
-      "http": 200,
-      "cenario": "CT06 segunda chamada de recuperacao",
-      "resultado": "PASSOU"
-    },
-    {
-      "http": 200,
-      "cenario": "Concluir ultimo emprestimo de teste",
-      "resultado": "PASSOU"
-    }
-  ],
-  "estadoFinal": {
-    "failureRate": "-1.0%",
-    "slowCallRate": "-1.0%",
-    "failureRateThreshold": "50.0%",
-    "slowCallRateThreshold": "100.0%",
-    "bufferedCalls": 1,
-    "failedCalls": 0,
-    "slowCalls": 0,
-    "slowFailedCalls": 0,
-    "notPermittedCalls": 0,
-    "state": "CLOSED"
-  },
-  "executadoEm": "2026-11-16T17:56:22.4043770-03:00"
+﻿{
+    "executadoEm":  "2026-11-16T18:11:07.1949591-03:00",
+    "cenarios":  [
+                     {
+                         "resultado":  "PASSOU",
+                         "http":  201,
+                         "cenario":  "Preparar usuario"
+                     },
+                     {
+                         "resultado":  "PASSOU",
+                         "http":  201,
+                         "cenario":  "Cadastrar para BOM"
+                     },
+                     {
+                         "resultado":  "PASSOU",
+                         "http":  201,
+                         "cenario":  "Criar emprestimo"
+                     },
+                     {
+                         "resultado":  "PASSOU",
+                         "http":  200,
+                         "cenario":  "Devolver com BOM"
+                     },
+                     {
+                         "resultado":  "PASSOU",
+                         "http":  200,
+                         "cenario":  "Conferir condicao e reserva"
+                     },
+                     {
+                         "resultado":  "PASSOU",
+                         "http":  200,
+                         "cenario":  "Repetir devolucao com outra condicao"
+                     },
+                     {
+                         "resultado":  "PASSOU",
+                         "http":  200,
+                         "cenario":  "Conferir repeticao sem sobrescrever condicao"
+                     },
+                     {
+                         "resultado":  "PASSOU",
+                         "http":  201,
+                         "cenario":  "Cadastrar para AVARIADO"
+                     },
+                     {
+                         "resultado":  "PASSOU",
+                         "http":  201,
+                         "cenario":  "Criar emprestimo"
+                     },
+                     {
+                         "resultado":  "PASSOU",
+                         "http":  200,
+                         "cenario":  "Devolver com AVARIADO"
+                     },
+                     {
+                         "resultado":  "PASSOU",
+                         "http":  200,
+                         "cenario":  "Conferir condicao e reserva"
+                     },
+                     {
+                         "resultado":  "PASSOU",
+                         "http":  200,
+                         "cenario":  "Repetir devolucao com outra condicao"
+                     },
+                     {
+                         "resultado":  "PASSOU",
+                         "http":  200,
+                         "cenario":  "Conferir repeticao sem sobrescrever condicao"
+                     },
+                     {
+                         "resultado":  "PASSOU",
+                         "http":  404,
+                         "cenario":  "CT03 equipamento inexistente"
+                     },
+                     {
+                         "resultado":  "PASSOU",
+                         "http":  400,
+                         "cenario":  "Condicao invalida"
+                     },
+                     {
+                         "resultado":  "PASSOU",
+                         "http":  400,
+                         "cenario":  "Condicao obrigatoria na devolucao"
+                     },
+                     {
+                         "resultado":  "PASSOU",
+                         "http":  201,
+                         "cenario":  "Equipamento para indisponibilidade"
+                     },
+                     {
+                         "resultado":  "PASSOU",
+                         "http":  201,
+                         "cenario":  "Emprestimo para indisponibilidade"
+                     },
+                     {
+                         "resultado":  "PASSOU",
+                         "http":  201,
+                         "cenario":  "Equipamento para indisponibilidade"
+                     },
+                     {
+                         "resultado":  "PASSOU",
+                         "http":  201,
+                         "cenario":  "Emprestimo para indisponibilidade"
+                     },
+                     {
+                         "resultado":  "PASSOU",
+                         "http":  201,
+                         "cenario":  "Equipamento para indisponibilidade"
+                     },
+                     {
+                         "resultado":  "PASSOU",
+                         "http":  201,
+                         "cenario":  "Emprestimo para indisponibilidade"
+                     },
+                     {
+                         "resultado":  "PASSOU",
+                         "http":  503,
+                         "cenario":  "CT04 falha remota"
+                     },
+                     {
+                         "resultado":  "PASSOU",
+                         "http":  200,
+                         "cenario":  "Emprestimo continua ativo"
+                     },
+                     {
+                         "resultado":  "PASSOU",
+                         "http":  503,
+                         "cenario":  "CT04 falha remota"
+                     },
+                     {
+                         "resultado":  "PASSOU",
+                         "http":  200,
+                         "cenario":  "Emprestimo continua ativo"
+                     },
+                     {
+                         "resultado":  "PASSOU",
+                         "http":  503,
+                         "cenario":  "CT04 falha remota"
+                     },
+                     {
+                         "resultado":  "PASSOU",
+                         "http":  200,
+                         "cenario":  "Emprestimo continua ativo"
+                     },
+                     {
+                         "resultado":  "PASSOU",
+                         "http":  503,
+                         "cenario":  "CT05 chamada bloqueada"
+                     },
+                     {
+                         "resultado":  "PASSOU",
+                         "http":  200,
+                         "cenario":  "CT06 primeira chamada de recuperacao"
+                     },
+                     {
+                         "resultado":  "PASSOU",
+                         "http":  200,
+                         "cenario":  "CT06 segunda chamada de recuperacao"
+                     },
+                     {
+                         "resultado":  "PASSOU",
+                         "http":  200,
+                         "cenario":  "Concluir ultimo emprestimo de teste"
+                     }
+                 ],
+    "estadoFinal":  {
+                        "failureRate":  "-1.0%",
+                        "slowCallRate":  "-1.0%",
+                        "failureRateThreshold":  "50.0%",
+                        "slowCallRateThreshold":  "100.0%",
+                        "bufferedCalls":  1,
+                        "failedCalls":  0,
+                        "slowCalls":  0,
+                        "slowFailedCalls":  0,
+                        "notPermittedCalls":  0,
+                        "state":  "CLOSED"
+                    }
 }

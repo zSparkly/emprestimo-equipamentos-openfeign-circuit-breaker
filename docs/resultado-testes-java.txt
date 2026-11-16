@@ -1,10 +1,8 @@
 -------------------------------------------------------------------------------
 Test set: br.edu.msemprestimo.EmprestimoServiceTest
 -------------------------------------------------------------------------------
-Tests run: 5, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 1.263 s -- in br.edu.msemprestimo.EmprestimoServiceTest
-
-
+Tests run: 5, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 1.236 s -- in br.edu.msemprestimo.EmprestimoServiceTest
 -------------------------------------------------------------------------------
 Test set: br.edu.msemprestimo.EquipamentoIntegracaoTest
 -------------------------------------------------------------------------------
-Tests run: 2, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 5.388 s -- in br.edu.msemprestimo.EquipamentoIntegracaoTest
+Tests run: 2, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 5.587 s -- in br.edu.msemprestimo.EquipamentoIntegracaoTest

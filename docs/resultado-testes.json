@@ -1,136 +1,136 @@
-{
-  "total": 26,
-  "cenarios": [
-    {
-      "cenario": "Cadastrar usuario",
-      "http": 201,
-      "resultado": "PASSOU"
-    },
-    {
-      "cenario": "Consultar usuario",
-      "http": 200,
-      "resultado": "PASSOU"
-    },
-    {
-      "cenario": "Email duplicado",
-      "http": 409,
-      "resultado": "PASSOU"
-    },
-    {
-      "cenario": "Matricula duplicada",
-      "http": 409,
-      "resultado": "PASSOU"
-    },
-    {
-      "cenario": "Validacao de entrada",
-      "http": 400,
-      "resultado": "PASSOU"
-    },
-    {
-      "cenario": "Cadastrar equipamento",
-      "http": 201,
-      "resultado": "PASSOU"
-    },
-    {
-      "cenario": "Consultar equipamento",
-      "http": 200,
-      "resultado": "PASSOU"
-    },
-    {
-      "cenario": "Patrimonio duplicado",
-      "http": 409,
-      "resultado": "PASSOU"
-    },
-    {
-      "cenario": "Listar disponiveis",
-      "http": 200,
-      "resultado": "PASSOU"
-    },
-    {
-      "cenario": "Usuario inexistente",
-      "http": 404,
-      "resultado": "PASSOU"
-    },
-    {
-      "cenario": "Equipamento inexistente",
-      "http": 404,
-      "resultado": "PASSOU"
-    },
-    {
-      "cenario": "Solicitar emprestimo",
-      "http": 201,
-      "resultado": "PASSOU"
-    },
-    {
-      "cenario": "Consultar emprestimo",
-      "http": 200,
-      "resultado": "PASSOU"
-    },
-    {
-      "cenario": "Consultar por usuario",
-      "http": 200,
-      "resultado": "PASSOU"
-    },
-    {
-      "cenario": "Equipamento ocupado",
-      "http": 409,
-      "resultado": "PASSOU"
-    },
-    {
-      "cenario": "Reserva repetida idempotente",
-      "http": 200,
-      "resultado": "PASSOU"
-    },
-    {
-      "cenario": "Outra reserva nao pode liberar",
-      "http": 409,
-      "resultado": "PASSOU"
-    },
-    {
-      "cenario": "Registrar devolucao",
-      "http": 200,
-      "resultado": "PASSOU"
-    },
-    {
-      "cenario": "Repetir devolucao",
-      "http": 200,
-      "resultado": "PASSOU"
-    },
-    {
-      "cenario": "Repetir liberacao",
-      "http": 204,
-      "resultado": "PASSOU"
-    },
-    {
-      "cenario": "UUID invalido",
-      "http": 400,
-      "resultado": "PASSOU"
-    },
-    {
-      "cenario": "Emprestimo inexistente",
-      "http": 404,
-      "resultado": "PASSOU"
-    },
-    {
-      "cenario": "Dois emprestimos concorrentes: somente um vencedor",
-      "http": "201,409",
-      "resultado": "PASSOU"
-    },
-    {
-      "cenario": "Devolucao antiga nao libera novo emprestimo",
-      "http": 200,
-      "resultado": "PASSOU"
-    },
-    {
-      "cenario": "Nova reserva continua ocupada",
-      "http": 200,
-      "resultado": "PASSOU"
-    },
-    {
-      "cenario": "Limpeza do emprestimo concorrente",
-      "http": 200,
-      "resultado": "PASSOU"
-    }
-  ],
-  "executadoEm": "2026-11-16T17:43:05.2940441-03:00"
+﻿{
+    "executadoEm":  "2026-11-16T18:10:25.3821431-03:00",
+    "cenarios":  [
+                     {
+                         "resultado":  "PASSOU",
+                         "http":  201,
+                         "cenario":  "Cadastrar usuario"
+                     },
+                     {
+                         "resultado":  "PASSOU",
+                         "http":  200,
+                         "cenario":  "Consultar usuario"
+                     },
+                     {
+                         "resultado":  "PASSOU",
+                         "http":  409,
+                         "cenario":  "Email duplicado"
+                     },
+                     {
+                         "resultado":  "PASSOU",
+                         "http":  409,
+                         "cenario":  "Matricula duplicada"
+                     },
+                     {
+                         "resultado":  "PASSOU",
+                         "http":  400,
+                         "cenario":  "Validacao de entrada"
+                     },
+                     {
+                         "resultado":  "PASSOU",
+                         "http":  201,
+                         "cenario":  "Cadastrar equipamento"
+                     },
+                     {
+                         "resultado":  "PASSOU",
+                         "http":  200,
+                         "cenario":  "Consultar equipamento"
+                     },
+                     {
+                         "resultado":  "PASSOU",
+                         "http":  409,
+                         "cenario":  "Patrimonio duplicado"
+                     },
+                     {
+                         "resultado":  "PASSOU",
+                         "http":  200,
+                         "cenario":  "Listar disponiveis"
+                     },
+                     {
+                         "resultado":  "PASSOU",
+                         "http":  404,
+                         "cenario":  "Usuario inexistente"
+                     },
+                     {
+                         "resultado":  "PASSOU",
+                         "http":  404,
+                         "cenario":  "Equipamento inexistente"
+                     },
+                     {
+                         "resultado":  "PASSOU",
+                         "http":  201,
+                         "cenario":  "Solicitar emprestimo"
+                     },
+                     {
+                         "resultado":  "PASSOU",
+                         "http":  200,
+                         "cenario":  "Consultar emprestimo"
+                     },
+                     {
+                         "resultado":  "PASSOU",
+                         "http":  200,
+                         "cenario":  "Consultar por usuario"
+                     },
+                     {
+                         "resultado":  "PASSOU",
+                         "http":  409,
+                         "cenario":  "Equipamento ocupado"
+                     },
+                     {
+                         "resultado":  "PASSOU",
+                         "http":  200,
+                         "cenario":  "Reserva repetida idempotente"
+                     },
+                     {
+                         "resultado":  "PASSOU",
+                         "http":  409,
+                         "cenario":  "Outra reserva nao pode liberar"
+                     },
+                     {
+                         "resultado":  "PASSOU",
+                         "http":  200,
+                         "cenario":  "Registrar devolucao"
+                     },
+                     {
+                         "resultado":  "PASSOU",
+                         "http":  200,
+                         "cenario":  "Repetir devolucao"
+                     },
+                     {
+                         "resultado":  "PASSOU",
+                         "http":  204,
+                         "cenario":  "Repetir liberacao"
+                     },
+                     {
+                         "resultado":  "PASSOU",
+                         "http":  400,
+                         "cenario":  "UUID invalido"
+                     },
+                     {
+                         "resultado":  "PASSOU",
+                         "http":  404,
+                         "cenario":  "Emprestimo inexistente"
+                     },
+                     {
+                         "resultado":  "PASSOU",
+                         "http":  "201,409",
+                         "cenario":  "Dois emprestimos concorrentes: somente um vencedor"
+                     },
+                     {
+                         "resultado":  "PASSOU",
+                         "http":  200,
+                         "cenario":  "Devolucao antiga nao libera novo emprestimo"
+                     },
+                     {
+                         "resultado":  "PASSOU",
+                         "http":  200,
+                         "cenario":  "Nova reserva continua ocupada"
+                     },
+                     {
+                         "resultado":  "PASSOU",
+                         "http":  200,
+                         "cenario":  "Limpeza do emprestimo concorrente"
+                     }
+                 ],
+    "total":  26
 }
